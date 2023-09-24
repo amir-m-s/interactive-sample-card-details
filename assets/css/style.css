@@ -1,43 +1,210 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+:root {
+  /* Primary */
+  --red: hsl(0, 100%, 66%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --lg-violet: hsl(270, 3%, 87%);
+  --dg-violet: hsl(279, 6%, 55%);
+  --vdg-violet: hsl(278, 68%, 11%);
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  font-size: 18px;
+  line-height: 1;
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input {
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+.attribution {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.main-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 100vh;
+}
+
+.main-content .decoration {
+  background: linear-gradient(
+    45deg,
+    hsl(249, 99%, 64%) 0%,
+    hsl(278, 94%, 30%) 100%
+  );
+}
+
+.main-content .content {
+  justify-self: center;
+  align-self: center;
+}
+
+.card-form label,
+.card-form input {
+  display: block;
+}
+
+.card-front,
+.card-rear {
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  width: 400px;
+  height: 220px;
+  color: var(--white);
+}
+
+.card-front {
+  display: grid;
+  align-items: baseline;
+  background-image: url("../images/bg-card-front.png");
+  top: 30%;
+  z-index: 10;
+}
+
+.card-front .card-logo {
+  padding: 1rem;
+}
+
+.card-front .card-number {
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+}
+
+.card-front .card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.2em;
+}
+
+.card-rear {
+  background-image: url("../images/bg-card-back.png");
 }

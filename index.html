@@ -10,14 +10,61 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Interactive card details form</title>
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm
+    <main class="main-content">
+      <div class="decoration"></div>
+      <div class="content">
+        <form class="card-form">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" placeholder="e.g. Jane" />
+
+          <label for="card-number">Card number</label>
+          <input
+            type="text"
+            id="card-number"
+            placeholder="e.g. 1234 5678 9123"
+          />
+          <div class="date-and-cvc">
+            <div>
+              <label>Exp. Date (MM/YY)</label>
+              <input type="text" placeholder="MM" class="exp-date" id="mm" />
+              <input type="text" placeholder="YY" class="exp-date" id="yy" />
+            </div>
+            <div>
+              <label for="cvc">CVC</label>
+              <input type="text" id="cvc" placeholder="e.g. 123" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-front">
+        <div class="card-logo">
+          <img src="./assets/images/card-logo.svg" alt="" />
+        </div>
+        <div class="card-number">
+          0000 0000 0000 0000
+        </div>
+        <div class="card-info">
+          <span>Jane Appleseed</span>
+          <span>00/00</span>
+        </div>
+      </div>
+      <div class="card-rear">
+
+      </div>
+    </main>
+     000 Appleseed 0000 Confirm
 
     <!-- Completed state start -->
 
