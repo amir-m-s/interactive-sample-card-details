@@ -169,6 +169,7 @@ input {
   align-self: center;
 }
 
+/* Form style */
 .card-form label,
 .card-form input {
   width: 100%;
@@ -200,7 +201,7 @@ input {
 }
 
 .card-form .confirm-btn {
-  width:100%;
+  width: 100%;
   background-color: var(--vdg-violet);
   color: var(--white);
   border: none;
@@ -224,6 +225,7 @@ input {
   width: 45%;
 }
 
+/* Cards style */
 .card-front,
 .card-rear {
   position: absolute;
