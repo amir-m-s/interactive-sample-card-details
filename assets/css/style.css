@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 :root {
   /* Primary */
   --red: hsl(0, 100%, 66%);
@@ -161,13 +164,64 @@ input {
 }
 
 .main-content .content {
+  width: 33%;
   justify-self: center;
   align-self: center;
 }
 
 .card-form label,
 .card-form input {
+  width: 100%;
   display: block;
+}
+
+.card-form label {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: var(--vdg-violet);
+  padding: 0.4em 0;
+}
+
+.card-form input {
+  border: 1px solid var(--lg-violet);
+  padding: 0.75em 0.5em;
+  border-radius: 0.5em;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 0.5em;
+}
+
+.card-form input:focus {
+  outline: none;
+  border: 1px solid var(--vdg-violet);
+}
+
+.card-form input::placeholder {
+  color: var(--lg-violet);
+}
+
+.card-form .confirm-btn {
+  width:100%;
+  background-color: var(--vdg-violet);
+  color: var(--white);
+  border: none;
+  padding: 1em 0;
+  cursor: pointer;
+  border-radius: 0.5em;
+  transition: 0.3s ease-in-out;
+}
+
+.card-form .confirm-btn:hover {
+  background-color: hsl(278, 68%, 18%);
+}
+
+.date-and-cvc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.date input {
+  display: inline-block;
+  width: 45%;
 }
 
 .card-front,
@@ -193,9 +247,9 @@ input {
 }
 
 .card-front .card-number {
-  padding-top: 3rem;
+  padding-top: 3em;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.4em;
   letter-spacing: 0.2em;
 }
 
