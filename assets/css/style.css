@@ -142,6 +142,7 @@ input {
 }
 
 .attribution {
+  text-align: right;
   position: fixed;
   width: 100%;
   left: 0;
