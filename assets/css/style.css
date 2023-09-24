@@ -156,11 +156,7 @@ input {
 }
 
 .main-content .decoration {
-  background: linear-gradient(
-    45deg,
-    hsl(249, 99%, 64%) 0%,
-    hsl(278, 94%, 30%) 100%
-  );
+  background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
 }
 
 .main-content .content {
@@ -200,7 +196,7 @@ input {
   color: var(--lg-violet);
 }
 
-.card-form .confirm-btn {
+.confirm-btn {
   width: 100%;
   background-color: var(--vdg-violet);
   color: var(--white);
@@ -211,7 +207,7 @@ input {
   transition: 0.3s ease-in-out;
 }
 
-.card-form .confirm-btn:hover {
+.confirm-btn:hover {
   background-color: hsl(278, 68%, 18%);
 }
 
@@ -231,17 +227,24 @@ input {
   position: absolute;
   background-size: cover;
   background-position: center center;
-  width: 400px;
-  height: 220px;
+  width: 380px;
+  height: 200px;
   color: var(--white);
 }
+
 
 .card-front {
   display: grid;
   align-items: baseline;
   background-image: url("../images/bg-card-front.png");
-  top: 30%;
+  top: 15%;
+  left: 10%;
   z-index: 10;
+}
+
+.card-rear {
+  top: 50%;
+  left: 15%;
 }
 
 .card-front .card-logo {
@@ -249,10 +252,10 @@ input {
 }
 
 .card-front .card-number {
-  padding-top: 3em;
+  padding-top: 1em;
   text-align: center;
   font-size: 1.4em;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 .card-front .card-info {
@@ -263,4 +266,31 @@ input {
 
 .card-rear {
   background-image: url("../images/bg-card-back.png");
+}
+
+.final-message {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.final-message h2 {
+  font-size: 2em;
+  text-align: center;
+  padding-block: 0.5em;
+}
+
+.final-message p {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.final-message .complete-icon {
+  text-align: center;
+}
+
+.complete-icon img {
+  max-width: 17%;
 }
