@@ -149,13 +149,13 @@ input {
 }
 
 .main-content {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 3fr;
   height: 100vh;
 }
 
 .main-content .decoration {
+  position: relative;
   background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
 }
 
