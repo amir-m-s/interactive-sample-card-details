@@ -397,6 +397,10 @@ input {
     padding-top: 8em;
   }
 
+  .complete-icon img {
+    max-width: 100%;
+  }
+
   .attribution {
     padding-top: 2em;
     position: static;
