@@ -113,6 +113,7 @@ nav,
 section {
   display: block;
 }
+
 body {
   font-size: 18px;
   line-height: 1;
@@ -157,7 +158,11 @@ input {
 
 .main-content .decoration {
   position: relative;
-  background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 72, 254, 1) 0%,
+    rgba(96, 5, 148, 1) 100%
+  );
 }
 
 .main-content .content {
@@ -232,7 +237,6 @@ input {
   height: 200px;
   color: var(--white);
 }
-
 
 .card-front {
   display: grid;
@@ -314,7 +318,8 @@ input {
   transition: 0.3s ease-in-out;
 }
 
-.err-msg, .date-err {
+.err-msg,
+.date-err {
   opacity: 0;
   color: var(--red);
   font-size: 0.7em;
@@ -340,12 +345,12 @@ input {
 
   .card-rear {
     left: 10%;
-  } 
+  }
 }
 
 @media (max-width: 845px) {
   body {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .main-content {
     height: auto;
@@ -363,16 +368,24 @@ input {
   .card-rear {
     width: 280px;
     height: 140px;
-    font-size: 1em
+    font-size: 1em;
   }
-  
+
   .card-rear {
     position: static;
   }
-  
+
   .card-front {
     top: 55%;
-    padding-bottom: 1em;
+    padding-bottom: 1.3em;
+  }
+
+  .card-front .card-number {
+    padding-top: 0.5em;
+  }
+
+  .card-front .card-info {
+    padding-top: 0.5em;
   }
 
   .card-rear .cvc-display {
@@ -396,7 +409,7 @@ input {
     padding: 2em 0;
     justify-content: center;
   }
-  
+
   .main-content .content {
     width: 85%;
   }
