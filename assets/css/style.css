@@ -417,4 +417,20 @@ input {
   .main-content .content {
     width: 85%;
   }
+
+  .card-front {
+    left: 2%;
+  }
+}
+
+
+@media (max-width: 300px) {
+  .card-logo img{
+    width: 20%;
+  }
+  .card-front,
+  .card-rear {
+    width: 90%;
+    aspect-ratio: 16/9;
+  }
 }
