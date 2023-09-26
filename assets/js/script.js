@@ -69,6 +69,8 @@ function numberFormatter() {
 // Other values display on card front and rear
 function cardDisplay(e) {
   const targetId = e.target.getAttribute("id");
+  if (targetId === "card-name")
+    document.querySelector(".card-info .card-name-display").innerText = e.target.value;
   if (targetId === "mm")
     document.querySelector(".card-info .month-display").innerText =
       e.target.value;
@@ -88,6 +90,7 @@ cvc.addEventListener("change", numberValidation);
 
 
 // Set event listeners to display on cards
+cardName.addEventListener("input", cardDisplay);
 MM.addEventListener("input", cardDisplay);
 YY.addEventListener("input", cardDisplay);
 cvc.addEventListener("input", cardDisplay);
