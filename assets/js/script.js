@@ -128,3 +128,6 @@ confirmBtn.addEventListener("click", confirmValidation);
 continueBtn.addEventListener("click", () => {
   location.reload();
 });
+
+// FIX Confirm bug. After changing value of an input and then clearing it out, confirm button will work
+// despite having invalid inputs.
