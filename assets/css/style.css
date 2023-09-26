@@ -281,6 +281,14 @@ input {
   display: none;
 }
 
+.final-message-visible {
+  display: block !important;
+}
+
+.invisible {
+  display: none !important;
+}
+
 .visible {
   opacity: 1 !important;
 }

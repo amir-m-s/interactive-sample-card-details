@@ -9,8 +9,17 @@ const cvc = document.querySelector("#cvc");
 
 const cardFrontDefaultNumber = "0000 0000 0000 0000";
 
+// Are all inputs valid?
+let allInputs = false;
+
 // Confirm variable
 const confirmBtn = document.querySelector("#confirm-btn");
+
+// after confirm, we need to show thanks message and hide card-form
+const finalMessage = document.querySelector(".final-message");
+const cardForm = document.querySelector(".card-form");
+
+const continueBtn = document.querySelector(".continue-btn");
 
 // Declare name validation function
 function nameValidation() {
@@ -19,9 +28,11 @@ function nameValidation() {
   if (nameLength < 3 || hasNum) {
     cardName.classList.add("invalid-input");
     cardName.nextElementSibling.classList.add("visible");
+    allInputs = false;
   } else {
     cardName.classList.remove("invalid-input");
     cardName.nextElementSibling.classList.remove("visible");
+    allInputs = true;
   }
 }
 // Add name validation event listener to cardName input
@@ -33,12 +44,15 @@ function numberValidation(e) {
   if (e.target.getAttribute("id") === "mm" && hasNaN) {
     e.target.classList.add("invalid-input");
     e.target.nextElementSibling.nextElementSibling.classList.add("visible");
+    allInputs = false;
   } else if (hasNaN) {
     e.target.classList.add("invalid-input");
     e.target.nextElementSibling.classList.add("visible");
+    allInputs = false;
   } else {
     e.target.classList.remove("invalid-input");
     e.target.nextElementSibling.classList.remove("visible");
+    allInputs = true;
   }
   numberFormatter();
 }
@@ -69,18 +83,22 @@ function numberFormatter() {
 // Other values display on card front and rear
 function cardDisplay(e) {
   const targetId = e.target.getAttribute("id");
-  if (targetId === "card-name")
+  if (targetId === "card-name") {
     document.querySelector(".card-info .card-name-display").innerText =
       e.target.value;
-  if (targetId === "mm")
+  }
+  if (targetId === "mm") {
     document.querySelector(".card-info .month-display").innerText =
       e.target.value;
-  if (targetId === "yy")
+  }
+  if (targetId === "yy") {
     document.querySelector(".card-info .year-display").innerText =
       e.target.value;
-  if (targetId === "cvc")
+  }
+  if (targetId === "cvc") {
     document.querySelector(".card-rear .cvc-display").innerText =
       e.target.value;
+  }
 }
 
 // Set event listeners to validate
@@ -94,3 +112,19 @@ cardName.addEventListener("input", cardDisplay);
 MM.addEventListener("input", cardDisplay);
 YY.addEventListener("input", cardDisplay);
 cvc.addEventListener("input", cardDisplay);
+
+function confirmValidation() {
+  if (allInputs) {
+    finalMessage.classList.add("final-message-visible");
+    cardForm.classList.add("invisible");
+  } else {
+    finalMessage.classList.remove(".final-message-visible");
+    cardForm.classList.remove("invisible");
+    alert("Please fill all inputs properly");
+  }
+}
+
+confirmBtn.addEventListener("click", confirmValidation);
+continueBtn.addEventListener("click", () => {
+  location.reload();
+});
