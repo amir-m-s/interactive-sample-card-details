@@ -42,6 +42,7 @@ function numberValidation() {
 
 cardNumber.addEventListener("input", numberValidation);
 
+// Card number formatter for display on card front
 function numberFormatter() {
   const cardFrontNumber = document.querySelector(".card-front .card-number");
 
@@ -55,9 +56,27 @@ function numberFormatter() {
 
   const res = cardNumberArray.join(" ");
 
-  if (cardNumber.value.length === 0 ) {
+  if (cardNumber.value.length === 0) {
     cardFrontNumber.innerText = cardFrontDefaultNumber;
   } else {
     cardFrontNumber.innerText = res;
   }
 }
+
+// Other values display on card front and rear
+function cardDisplay(e) {
+  const targetId = e.target.getAttribute("id");
+  if (targetId === "mm")
+    document.querySelector(".card-info .month-display").innerText =
+      e.target.value;
+  if (targetId === "yy")
+    document.querySelector(".card-info .year-display").innerText =
+      e.target.value;
+  if (targetId === "cvc")
+    document.querySelector(".card-rear .cvc-display").innerText =
+      e.target.value;
+}
+
+MM.addEventListener("input", cardDisplay);
+YY.addEventListener("input", cardDisplay);
+cvc.addEventListener("input", cardDisplay);
