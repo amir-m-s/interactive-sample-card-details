@@ -28,14 +28,14 @@ function nameValidation() {
 cardName.addEventListener("change", nameValidation);
 
 // number validation function
-function numberValidation() {
-  const hasNaN = isNaN(cardNumber.value);
+function numberValidation(e) {
+  const hasNaN = isNaN(e.target.value);
   if (hasNaN) {
-    cardNumber.classList.add("invalid-input");
-    cardNumber.nextElementSibling.classList.add("visible");
+    e.target.classList.add("invalid-input");
+    e.target.nextElementSibling.classList.add("visible");
   } else {
-    cardNumber.classList.remove("invalid-input");
-    cardNumber.nextElementSibling.classList.remove("visible");
+    e.target.classList.remove("invalid-input");
+    e.target.nextElementSibling.classList.remove("visible");
   }
   numberFormatter();
 }
@@ -77,6 +77,14 @@ function cardDisplay(e) {
       e.target.value;
 }
 
+// Set event listeners to validate
+
+MM.addEventListener("change", numberValidation);
+YY.addEventListener("change", numberValidation);
+cvc.addEventListener("change", numberValidation);
+
+
+// Set event listeners to display on cards
 MM.addEventListener("input", cardDisplay);
 YY.addEventListener("input", cardDisplay);
 cvc.addEventListener("input", cardDisplay);
