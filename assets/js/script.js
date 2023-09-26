@@ -1,6 +1,6 @@
 "use strict";
 // Form validation
-// Inpu variables
+// Input variables
 const cardName = document.querySelector("#card-name");
 const cardNumber = document.querySelector("#card-number");
 const MM = document.querySelector("#mm");
@@ -70,7 +70,8 @@ function numberFormatter() {
 function cardDisplay(e) {
   const targetId = e.target.getAttribute("id");
   if (targetId === "card-name")
-    document.querySelector(".card-info .card-name-display").innerText = e.target.value;
+    document.querySelector(".card-info .card-name-display").innerText =
+      e.target.value;
   if (targetId === "mm")
     document.querySelector(".card-info .month-display").innerText =
       e.target.value;
@@ -87,7 +88,6 @@ function cardDisplay(e) {
 MM.addEventListener("change", numberValidation);
 YY.addEventListener("change", numberValidation);
 cvc.addEventListener("change", numberValidation);
-
 
 // Set event listeners to display on cards
 cardName.addEventListener("input", cardDisplay);
