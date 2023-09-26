@@ -30,7 +30,10 @@ cardName.addEventListener("change", nameValidation);
 // number validation function
 function numberValidation(e) {
   const hasNaN = isNaN(e.target.value);
-  if (hasNaN) {
+  if (e.target.getAttribute("id") === "mm" && hasNaN) {
+    e.target.classList.add("invalid-input");
+    e.target.nextElementSibling.nextElementSibling.classList.add("visible");
+  } else if (hasNaN) {
     e.target.classList.add("invalid-input");
     e.target.nextElementSibling.classList.add("visible");
   } else {
